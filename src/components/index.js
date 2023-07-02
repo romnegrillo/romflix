@@ -1,8 +1,5 @@
-import MovieInformation from './MovieInformation/MovieInformation';
-import Movie from './Movie/Movie';
-import Actors from './Actors/Actors';
-import Profile from './Profile/Profile';
-import NavBar from './NavBar/NavBar';
-import Sidebar from './Sidebar/Sidebar';
-
-export { MovieInformation, Movie, Actors, Profile, NavBar, Sidebar };
+export { default as MovieInformation } from './MovieInformation/MovieInformation';
+export { default as Movie } from './Movie/Movie';
+export { default as Actors } from './Actors/Actors';
+export { default as Profile } from './Profile/Profile';
+export { default as NavBar } from './NavBar/NavBar';

@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './styles';
 
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../SideBar/SideBar';
 
 const NavBar = () => {
   const classes = useStyles();
@@ -37,7 +37,9 @@ const NavBar = () => {
               color="inherit"
               edge="start"
               stlye={{ outline: 'none' }}
-              onClick={() => {}}
+              onClick={() => {
+                setMobileOpen((prevMobileOpen) => !prevMobileOpen);
+              }}
               className={classes.menuButton}
             >
               <Menu />
@@ -60,7 +62,7 @@ const NavBar = () => {
                 color="inherit"
                 component={Link}
                 to="/profile/:id"
-                classname={classes.linkButton}
+                className={classes.linkButton}
                 onClick={() => {}}
               >
                 {!isMobile && <>My Movies &nbsp;</>}
@@ -76,16 +78,19 @@ const NavBar = () => {
           {isMobile && 'Search...'}
         </Toolbar>
       </AppBar>
+
       <div>
         <nav className={classes.drawer}>
           {isMobile ? (
             <Drawer
               variant="temporary"
-              anchor="right"
+              anchor="left"
               open={mobileOpen}
-              className={classes.drawerBackground}
-              classes={{ paper: classes.drawerPaper }}
+              // classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
+              onClose={() => {
+                setMobileOpen((prevMobileOpen) => !prevMobileOpen);
+              }}
             >
               <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
