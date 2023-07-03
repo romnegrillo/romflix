@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './styles';
 
-import SideBar from '../SideBarTemp/SideBarTemp';
+import SideBar from '../SideBar/SideBar';
 
 const NavBar = () => {
   const classes = useStyles();
