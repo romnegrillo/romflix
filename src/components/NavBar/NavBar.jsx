@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './styles';
 
-import Sidebar from '../SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 
 const NavBar = () => {
   const classes = useStyles();
@@ -92,11 +92,11 @@ const NavBar = () => {
                 setMobileOpen((prevMobileOpen) => !prevMobileOpen);
               }}
             >
-              <Sidebar setMobileOpen={setMobileOpen} />
+              <SideBar setMobileOpen={setMobileOpen} />
             </Drawer>
           ) : (
             <Drawer variant="permanent" open>
-              <Sidebar setMobileOpen={setMobileOpen} />
+              <SideBar setMobileOpen={setMobileOpen} />
             </Drawer>
           )}
         </nav>
