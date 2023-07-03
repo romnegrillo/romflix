@@ -2,7 +2,7 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 
-import { MovieInformation, Movie, Actors, Profile, NavBar } from '.';
+import { MovieInformation, Movies, Actors, Profile, NavBar } from '.';
 import useStyles from './styles';
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Routes>
-          <Route path="/" element={<MovieInformation />} />
-          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/" element={<Movies />} />
+          <Route path="/movie/:id" element={<MovieInformation />} />
           <Route path="/actors/:id" element={<Actors />} />
           <Route path="/profile/:id" element={<Profile />} />
         </Routes>
