@@ -7,13 +7,43 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 
+import { MovieList } from '..';
 import { useGetMoviesQuery } from '../../services/TMDB';
 
 const Movies = () => {
-  const { data } = useGetMoviesQuery();
-  console.log(data);
+  const { data, error, isFetching } = useGetMoviesQuery();
 
-  return <div>Movies</div>;
+  if (isFetching) {
+    return (
+      <Box display="flex" justifyContent="center">
+        <CircularProgress size="4rem" />
+      </Box>
+    );
+  }
+
+  if (!data.results.length) {
+    return (
+      <Box display="flex" alignItems="center" mt="20px">
+        <Typography varian="h4">
+          No movies match that name.
+          <br />
+          Search something else.
+        </Typography>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return 'An error has occured.';
+  }
+
+  console.log(data.results);
+
+  return (
+    <div>
+      <MovieList data={data} />{' '}
+    </div>
+  );
 };
 
 export default Movies;
