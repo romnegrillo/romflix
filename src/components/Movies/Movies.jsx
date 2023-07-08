@@ -37,8 +37,6 @@ const Movies = () => {
     return 'An error has occured.';
   }
 
-  console.log(data.results);
-
   return (
     <div>
       <MovieList data={data} />{' '}

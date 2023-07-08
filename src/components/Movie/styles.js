@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
     },
-    '&:hover': { cursor: 'pointer', textDecoration: 'none' },
+    '&:hover': { cursor: 'pointer' },
   },
 
   image: {
