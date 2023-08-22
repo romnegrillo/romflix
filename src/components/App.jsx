@@ -1,12 +1,14 @@
 import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { MovieInformation, Movies, Actors, Profile } from '.';
 import NavBar from './NavBar/NavBar';
 import useStyles from './styles';
 
-function App() {
+const App = () => {
   const classes = useStyles();
 
   return (
@@ -26,6 +28,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;
